@@ -1,0 +1,48 @@
+$def with (name)
+<script>
+    window.addEventListener('message', function(event) {
+    console.log("Message received from the parent: " + event.data); // Message received from parent
+    });
+</script>
+<script>
+    function genButt(outputMessage){
+    // // alert("I want to see LSDREAM live w/ Sean and Jeff and maybe Reese if he wants to go. I miss them.");
+    // }
+
+
+    button = document.getElementById("testButt");
+    button.addEventListener("click", function () {
+    window.parent.postMessage(outputMessage, "*");
+    
+    
+});
+}
+
+
+</script>
+$if name=="pain":
+    <em>~Pain~</em> + <p id="input">$name</p>
+    <script> 
+    inputText = document.getElementById("input").innerHTML;
+    </script>
+    <p id="out">$runModel()<p>
+    <div>
+        <button id="testButt">Hi</button>
+        <script>
+            outputEmbeddings = document.getElementById("out");
+        </script>
+    </div>
+$else:
+    <p>~Pain~</p>
+    <p id="out">$name</p>
+        <div>
+            <script>
+                outputEmbeddings = document.getElementById("out").innerHTML;
+                window.parent.postMessage(outputEmbeddings, "*");
+            </script>
+            <button id="testButt">Hi</button>
+            <script>
+                outputEmbeddings = document.getElementById("out").innerHTML;
+                genButt(outputEmbeddings);
+            </script>
+        </div>
