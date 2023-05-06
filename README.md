@@ -1,5 +1,6 @@
 # AIFSG_Trigger_Warning
-A ML based Chrome Extension to help filter sensitive content. 
+A ML based Chrome Extension to help filter sensitive content. By Andrew Rippy, Klaijan Sinteppadon, and Olivia Xu. 
+Project for Carnegie Mellon Univeristy - AI For Social Good, 17737, taught by Fei Fang, Spring 2023.
 
 ## Basic Usage
 In order to use this plugin, there are two main components.
